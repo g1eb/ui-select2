@@ -93,7 +93,9 @@ angular.module('ui.select2', []).value('uiSelect2Config', {}).directive('uiSelec
           }, true);
           controller.$render = function () {
             if (isSelect) {
-              elm.select2('val', controller.$viewValue);
+              $timeout(function() {
+                elm.select2('val', controller.$viewValue);
+              },0);
             } else {
               if (opts.multiple) {
                 controller.$isEmpty = function (value) {
