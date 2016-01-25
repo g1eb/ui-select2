@@ -146,7 +146,7 @@ angular.module('ui.select2', []).value('uiSelect2Config', {}).directive('uiSelec
                   controller.$setPristine(true);
                 }
               });
-            });
+            }, true);
           }
 
           // Update valid and dirty statuses
@@ -209,7 +209,7 @@ angular.module('ui.select2', []).value('uiSelect2Config', {}).directive('uiSelec
           scope.$watch(attrs.ngMultiple, function(newVal) {
             attrs.$set('multiple', !!newVal);
             elm.select2(opts);
-          });
+          }, true);
         }
 
         // Initialize the plugin late so that the injected DOM does not disrupt the template compiler
