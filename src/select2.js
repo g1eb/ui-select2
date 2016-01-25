@@ -134,9 +134,6 @@ angular.module('ui.select2', []).value('uiSelect2Config', {}).directive('uiSelec
           // Watch the options dataset for changes
           if (watch) {
             scope.$watch(watch, function (newVal, oldVal, scope) {
-              if (angular.equals(newVal, oldVal)) {
-                return;
-              }
               // Delayed so that the options have time to be rendered
               $timeout(function () {
                 elm.select2('val', controller.$viewValue);
