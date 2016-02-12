@@ -95,7 +95,7 @@ angular.module('ui.select2', []).value('uiSelect2Config', {}).directive('uiSelec
             if (isSelect) {
               $timeout(function() {
                 elm.select2('val', controller.$viewValue);
-              },500);
+              }, 500);
             } else {
               if (opts.multiple) {
                 controller.$isEmpty = function (value) {
@@ -142,7 +142,7 @@ angular.module('ui.select2', []).value('uiSelect2Config', {}).directive('uiSelec
                 if(newVal && !oldVal && controller.$setPristine) {
                   controller.$setPristine(true);
                 }
-              });
+              }, 500);
             }, true);
           }
 
@@ -230,7 +230,7 @@ angular.module('ui.select2', []).value('uiSelect2Config', {}).directive('uiSelec
               }
             elm.prev().toggleClass('ng-pristine', controller.$pristine);
           }
-        });
+        }, 500);
       };
     }
   };
